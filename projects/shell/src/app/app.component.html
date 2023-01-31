@@ -1,8 +1,46 @@
-<a routerLink="/">Hem</a>
-<a routerLink="/news">Nyheter</a>
-<a routerLink="/user-table">Användartabell</a>
-<a routerLink="/sub">Shell submodule</a>
+<div class="layout">
+    <header>
+        <a routerLink="/">
+            <svg class="logo" viewBox="-0.5 -0.5 81 61">
+                <g pointer-events="all">
+                    <rect width="80" height="60" fill="#0050ef" rx="9" ry="9" />
+                    <path fill="#FFF" d="M28 15h10v30H28zM43 15h10v30H43z" />
+                </g>
+            </svg>
+            <span class="logo-text">MyPipe</span>
+        </a>
+        <div class="right-header">
+            <div #placeHolder></div>
+            <button class="hamburger-button" (click)="toggleNav()">
+                <svg class="hamburger-icon" viewBox="0 0 100 100" [class.opened]="showNav">
+                    <rect class="line top" width="80" height="10" x="10" y="25" rx="5"></rect>
+                    <rect class="line middle" width="80" height="10" x="10" y="45" rx="5"></rect>
+                    <rect class="line bottom" width="80" height="10" x="10" y="65" rx="5"></rect>
+                </svg>
+            </button>
+        </div>
+    </header>
 
-<p>Skalet</p>
+    <nav [ngClass]="showNav ? 'visible' : 'hidden'">
+        <p class="nav-divider">Initial</p>
+        <ul>
+            <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Start</a></li>
+        </ul>
+        <p class="nav-divider">Extended</p>
+        <ul>
+            <li><a routerLinkActive="active" routerLink="/news">Nyheter</a></li>
+            <li><a routerLinkActive="active" routerLink="/user-table">Användartabell</a></li>
+            <li><a routerLinkActive="active" routerLink="/signup">Registrera</a></li>
+            <li><a routerLinkActive="active" routerLink="/sub">Shell submodule</a></li>
+        </ul>
+    </nav>
 
-<router-outlet></router-outlet>
+    <main>
+        <mfe-news page="1" pageSize="3"></mfe-news>
+        <router-outlet></router-outlet>
+    </main>
+
+    <footer>
+        <p>Copy</p>
+    </footer>
+</div>

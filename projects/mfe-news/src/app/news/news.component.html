@@ -1,1 +1,6 @@
-<p>Microfrontend mfe-news</p>
+<div *ngFor="let article of articles" class="article-container">
+    <img class="article-thumbnail" [src]="article.urlToImage" [alt]="article.title" />
+    <h3 class="article-header">{{ article.title }}</h3>
+    <p class="article-desc">{{ article.description }}</p>
+    <a class="article-link" [href]="article.url" target="_blank">Read full article</a>
+</div>

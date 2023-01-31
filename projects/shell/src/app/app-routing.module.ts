@@ -36,6 +36,15 @@ const routes: Routes = [
             }).then(m => m.NewsModule)
     },
     {
+        path: 'signup',
+        loadChildren: () =>
+            loadRemoteModule({
+                type: 'manifest',
+                remoteName: 'mfeSignup',
+                exposedModule: './Module'
+            }).then(m => m.SignupModule)
+    },
+    {
         path: '**',
         component: Page404Component
     }

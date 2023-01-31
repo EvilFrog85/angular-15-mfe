@@ -1,4 +1,5 @@
 {
     "mfeNews": "http://localhost:4201/remoteEntry.js",
-    "mfeUserTable": "http://localhost:4202/remoteEntry.js"
+    "mfeUserTable": "http://localhost:4202/remoteEntry.js",
+    "mfeSignup": "http://localhost:4203/remoteEntry.js"
 }

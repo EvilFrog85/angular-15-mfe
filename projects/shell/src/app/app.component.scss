@@ -1,8 +1,186 @@
-* {
-    margin: 0;
-    padding: 0;
-}
+.layout {
+    display: grid;
+    max-width: 1920px;
+    min-height: 100vh;
+    margin: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 62px 1fr;
+    grid-template-areas:
+        "header header"
+        "main main"
+        "footer footer";
 
-a {
-    padding: 4px 8px;
+    @media all and (min-width: 768px) {
+        grid-template-columns: minmax(150px, auto) 1fr;
+        grid-template-areas: 
+            "header header"
+            "nav main"
+            "footer footer";
+    }
+
+    background: var(--body-background);
+}
+    header {
+        grid-area: header;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        
+        a {
+            display: flex;
+            align-items: center;
+            margin: 10px 10px 10px 20px;
+            text-decoration: none;
+
+            & .logo {
+                height: 42px;
+            }
+            & .logo-text {
+                margin-left: 10px;
+                font-weight: bold;
+                color: var(--primary-400);
+            }
+
+            &:hover {
+                .logo {
+                    fill: #F00;
+                }
+                .logo-text {
+                    color: var(--primary-200);
+                }
+            }
+        }
+
+        .right-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+        }
+        
+        .hamburger-button {
+            width: 40px;
+            height: 40px;
+            background-color: transparent;
+            border-radius: 5px;
+            cursor: pointer;
+
+            @media all and (min-width: 768px) {
+                display: none;
+            }
+
+            .hamburger-icon {
+                fill: var(--color-300);
+
+                &:hover {
+                    fill: var(--primary-400);
+                }
+
+                .line {
+                    transition: y .2s ease-in .2s, rotate .2s ease-in, opacity 0s .2s;
+                    transform-origin: center;
+                }
+
+                &.opened {
+                    .line {
+                        transition: y .2s ease-in, rotate .2s ease-in .2s, opacity 0s .2s;
+                        transform-origin: center;
+                    }
+                    & :is(.top, .bottom) { y: 45px; }
+                    & .top { rotate: -45deg; }
+                    & .middle { opacity: 0; }
+                    & .bottom { rotate: 45deg; }
+                }
+            }
+        }
+
+        .logout-btn {
+            cursor: pointer;
+            font-weight: 600;
+
+            &:hover {
+                color: var(--primary-400);
+            }
+        }
+    }
+    nav {
+        grid-area: nav;
+        display: none;
+        box-sizing: border-box;
+        padding: 20px;
+        background: var(--color-500);
+        max-height: calc(100vh - 62px);
+        overflow: auto;
+
+        &.visible {
+            display: block;
+            position: absolute;
+                z-index: 1000;
+                top: 62px;
+                left: 0;
+            width: 100%;
+        }
+
+        @media all and (min-width: 768px) {
+            display: block;
+            background: unset;
+
+            &.visible {
+                position: unset;
+                width: auto;
+            }   
+        }
+
+        ul {
+            list-style-type: none;
+            user-select: none;
+        }
+
+            li {
+                font-size: 16px;
+            }
+            a {
+                display: block;
+                font-weight: 600;
+                color: var(--primary-400);
+
+                &.active {
+                    color: var(--primary-200);
+                }
+                &:hover {
+                    color: var(--color-300);
+                }
+            }
+
+        .nav-divider {
+            margin-top: 24px;
+            color: var(--color-300);
+            font-size: 18px;
+            border-bottom: 1px solid var(--color-300);
+        }
+        toggle-switch {
+            display: block;
+            margin: 6px 0 12px 0;
+        }
+    }
+    main {
+        grid-area: main;
+        box-sizing: border-box;
+        padding: 20px;
+        min-height: 300px;
+        max-height: calc(100vh - 62px);
+        overflow: auto;
+        border-radius: 3px;
+    }
+    footer {
+        grid-area: footer;
+        box-sizing: border-box;
+        padding: 20px;
+        text-align: center;
+    }
+
+
+header, nav, main, footer {
+    box-sizing: border-box;
+    border: 1px solid var(--primary-400);
 }

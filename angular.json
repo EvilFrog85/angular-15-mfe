@@ -323,6 +323,113 @@
 					}
 				}
 			}
+		},
+		"mfe-signup": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				}
+			},
+			"root": "projects/mfe-signup",
+			"sourceRoot": "projects/mfe-signup/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/mfe-signup",
+						"index": "projects/mfe-signup/src/index.html",
+						"main": "projects/mfe-signup/src/main.ts",
+						"polyfills": [
+							"zone.js"
+						],
+						"tsConfig": "projects/mfe-signup/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/mfe-signup/src/favicon.ico",
+							"projects/mfe-signup/src/assets"
+						],
+						"styles": [
+							"projects/mfe-signup/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/mfe-signup/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "2kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all",
+							"extraWebpackConfig": "projects/mfe-signup/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "mfe-signup:build:production",
+							"extraWebpackConfig": "projects/mfe-signup/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "mfe-signup:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4203,
+						"publicHost": "http://localhost:4203",
+						"extraWebpackConfig": "projects/mfe-signup/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "mfe-signup:build",
+						"extraWebpackConfig": "projects/mfe-signup/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"polyfills": [
+							"zone.js",
+							"zone.js/testing"
+						],
+						"tsConfig": "projects/mfe-signup/tsconfig.spec.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/mfe-signup/src/favicon.ico",
+							"projects/mfe-signup/src/assets"
+						],
+						"styles": [
+							"projects/mfe-signup/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
 		}
 	}
 }

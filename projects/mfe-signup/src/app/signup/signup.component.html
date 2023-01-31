@@ -1,0 +1,17 @@
+<div class="form-container">
+    <form class="register-form" [formGroup]="registerForm" (ngSubmit)="registerUser()">
+        <label for="username">Användarnamn:</label>
+        <input id="username" formControlName="username" type="text" required />
+
+        <label for="email">Email:</label>
+        <input id="email" formControlName="email" type="email" required />
+
+        <label for="p1">Lösenord:</label>
+        <input id="p1" formControlName="p1" type="password" required />
+
+        <label for="p2">Upprepa lösenord:</label>
+        <input id="p2" formControlName="p2" type="password" required />
+
+        <button class="register-btn" [disabled]="!registerForm.valid">Registrera</button>
+    </form>
+</div>

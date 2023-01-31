@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Open Sans', sans-serif;
+}
+h2 {
+    padding-top: 50px;
+    padding-bottom: 35px;
+}
+h1, h2, h3, h4, h5 {
+	color: var(--color-200);
+}
+p, li {
+	font-size: 12px;
+	line-height: 1.43;
+	color: var(--color-200);
+
+	&.smal {
+		font-size: 10px;
+        color: var(--color-300);
+	}
+
+	@media all and (min-width: 520px) {
+		font-size: 14px;
+
+		&.smal {
+			font-size: 12px;
+		}
+	}
+}
+.italic {
+	font-style: italic;
+}
+.bold {
+	font-weight: 600;
+}
+.line-height-1x5 {
+	line-height: 1.5;
+}
+.nowrap {
+	white-space: nowrap;
+}
+.break-word {
+  word-break: break-word;
+}
+.invalid {
+	color: var(--clr-red-200);
+}
+.uppercase {
+	text-transform: uppercase;
+}
+.center-text {
+	text-align: center;
+}
+.ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
