@@ -5,7 +5,7 @@ module.exports = withModuleFederationPlugin({
     name: 'mfeUserTable',
 
     exposes: {
-        './Module': './projects/mfe-user-table/src/app/app.module.ts'
+        './Module': './projects/mfe-user-table/src/app/user-table/user-table.module.ts'
     },
 
     shared: {
