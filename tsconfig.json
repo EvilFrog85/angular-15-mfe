@@ -16,6 +16,11 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "ES2022",
+    "paths": {
+      "store": [
+        "projects/store/src/public-api.ts"
+      ]
+    },
     "module": "ES2022",
     "useDefineForClassFields": false,
     "lib": [

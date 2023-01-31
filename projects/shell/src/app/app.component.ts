@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StoreService } from 'store';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   showNav: boolean = true;
 
-  constructor() { }
+  constructor(
+    private store: StoreService
+  ) { 
+    this.store.login('Jonas', '');
+  }
 
   ngOnInit(): void {
   }

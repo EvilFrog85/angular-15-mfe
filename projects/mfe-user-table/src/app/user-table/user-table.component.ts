@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StoreService } from 'store';
 
 @Component({
   selector: 'app-user-table',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class UserTableComponent {
 
+  user: string = this.store.user;
+
+  constructor(
+    private store: StoreService
+  ) {}
 }
