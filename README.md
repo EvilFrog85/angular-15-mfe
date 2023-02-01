@@ -1,4 +1,15 @@
-# Steps to reproduce
+# Micro frontend demo
+Try it out by running `npm install` and `npm run run:all`.
+I've tried to add examples of some of the most common features of a Angular project.
+
+1. Shell uses internal components och lazy-loaded modules.
+2. Shell uses mfe lazy-loaded modules.
+3. Shell use a mfe lazy-loaded component.
+4. Shell and one mfe use a shared lib --> store, to set and get values. The same principle is applicable to a auth-lib.
+5. One mfe module fetches data from external API.
+
+
+## Steps to reproduce this repo
 1. `ng new angular-microfrontend --create-application=false --interactive=false`
 2. `ng g application shell --style scss --routing true`
 3. `ng g application mfe-news --style scss --routing false`
@@ -27,3 +38,6 @@ et.c.
 
 ## Need to knows
 When creating a new mfe and exporting a module, exposed module can not be app.module. Atleast not without additional configuration.
+
+## TODOs
+Add example using shared and isolated CSS. encapsulation: ViewEncapsulation.___

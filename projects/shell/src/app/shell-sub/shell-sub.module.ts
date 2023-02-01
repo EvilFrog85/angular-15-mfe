@@ -8,12 +8,12 @@ import { NewsContainerComponent } from '../components/news-container/news-contai
 
 @NgModule({
   declarations: [
-    ShellSubComponent,
-    NewsContainerComponent
-  ],
-  imports: [
+    ShellSubComponent
+],
+imports: [
     CommonModule,
-    ShellSubRoutingModule
+    ShellSubRoutingModule,
+    NewsContainerComponent
   ]
 })
 export class ShellSubModule { }

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-signup',
+  selector: 'mfe-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss']
 })

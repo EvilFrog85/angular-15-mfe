@@ -43,3 +43,4 @@ Thumbs.db
 
 # API key
 /projects/mfe-news/src/app/apiKey.json
+/projects/mfe-news-component/src/app/apiKey.json

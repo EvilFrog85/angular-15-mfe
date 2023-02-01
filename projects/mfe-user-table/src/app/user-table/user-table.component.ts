@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { StoreService } from 'store';
 
 @Component({
-  selector: 'app-user-table',
+  selector: 'mfe-user-table',
   templateUrl: './user-table.component.html',
   styleUrls: ['./user-table.component.scss']
 })

@@ -1,0 +1,39 @@
+mfe-news {
+    padding: 20px;
+    display: block;
+    border: 2px dashed purple;
+}
+
+mfe-news-component {
+    display: block;
+    padding: 20px;
+    margin-top: 40px;
+    border: 2px dashed green;
+}
+
+mfe-user-table {
+    display: block;
+    padding: 20px;
+    border: 2px dashed yellow;
+
+    .store-box {
+        display: block;
+        padding: 20px;
+        margin-top: 40px;
+        border: 2px dashed red;
+    }
+}
+
+mfe-signup {
+    display: inline-block;
+    padding: 20px;
+    border: 2px dashed hsl(0, 43%, 56%);
+}
+
+/* "Internal lazy-loaded modules.. */
+app-shell-sub {
+    display: block;
+    padding:10px;
+    box-sizing: border-box;
+    border: 2px dashed var(--primary-400);
+}
