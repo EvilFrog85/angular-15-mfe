@@ -33,7 +33,7 @@ const routes: Routes = [
                 type: 'manifest',
                 remoteName: 'mfeNews',
                 exposedModule: './Module'
-            }).then(m => m.NewsModule)
+            }).then( m => { console.log(m); return m.NewsModule })
     },
     {
         path: 'signup',
